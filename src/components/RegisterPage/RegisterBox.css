@@ -1,0 +1,18 @@
+.RegisterWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RegisterBox {
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  border-radius: 10px;
+  background-color: rgb(190, 190, 247);
+}

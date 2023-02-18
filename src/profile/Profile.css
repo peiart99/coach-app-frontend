@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 
-h2, h3, button {
+h2, h3, button, select {
     font-family: 'Montserrat', sans-serif;
     color: #000;
     font-size: 40px;
@@ -10,12 +10,16 @@ h2 {
     font-size: 1.1em;
 }
 
-h3, button {
+h3, button, select, ul {
     font-size: 0.6em;
 }
 
-h3, h2 {
-    margin: 0.5em 0;
+h3, h2, ul {
+    margin: 0.4em 0;
+}
+
+.text-main-color {
+    color: #BADA55;
 }
 
 .border {
@@ -60,8 +64,8 @@ button {
     align-items: flex-start;
 }
 
-.group .box-inline{
-column-gap: 30px;
+.group .box-inline, .workout .box-inline{
+    column-gap: 30px;
 }
 
 .box-left {
@@ -70,4 +74,29 @@ column-gap: 30px;
 
 select {
     width: 200px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px #000 solid;
+}
+
+.workout-list {
+    border-radius: 5px;
+    border: 1px #000 solid;
+}
+.workout-list h3, ul {
+    padding-inline: 30px;
+}
+
+.workout-list hr {
+    border: 0;
+    border-bottom: 1px #000 solid;
+    width: 100%;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none
+}
+li {
+    line-height: 1.5em;
 }

@@ -9,6 +9,33 @@ function Profile() {
     var coach = "coach";
 
     const groups = ["group1", "group2", "group3"];
+    const workouts = ["workout1", "workout2", "workout3"];
+
+    function SelectList(props) {
+        const list = props.groups;
+
+        const options = list.map((e) =>
+            <option key={e}>{e}</option>
+        );
+
+        return (
+            <select>
+                {options}
+            </select>
+        );
+    };
+
+    function ShowList(props) {
+        const list = props.workouts;
+
+        return (
+            <ul>
+                {list.map((e) => (
+                    <li>{e}</li>
+                ))}
+            </ul>
+        );
+    };
 
     return (
         <div className={'border'}>
@@ -29,12 +56,21 @@ function Profile() {
             </section>
             <section className={'group'}>
                 <div className={'box-inline box-left'}>
-                    <select>
-                        {groups}
-                    </select>
+                    <SelectList groups={groups}></SelectList>
                     <a><button>wybierz klub</button></a>
                     <a><button>wypisz się</button></a>
                 </div>
+            </section>
+            <section className={'workout'}>
+                <div className={'box-inline box-left'}>
+                    <div className={'box-column workout-list'}>
+                        <h3 className={'text-main-color'}>treningi moje</h3>
+                        <hr></hr>
+                        {<ShowList workouts={workouts}></ShowList>}
+                    </div>
+                    <a><button>zobacz wyniki</button></a>
+                </div>
+
             </section>
         </div>
     );

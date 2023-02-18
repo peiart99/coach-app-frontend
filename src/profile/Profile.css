@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+h2, h3, button, select {
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 1.1em;
+}
+
+h3, button, select, ul {
+    font-size: 0.6em;
+}
+
+h3, h2, ul {
+    margin: 0.4em 0;
+}
+
+.text-main-color {
+    color: #BADA55;
+}
+
+.border {
+    width: 90%;
+    height: 100%;
+    padding: 50px;
+}
+
+.box-inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+}
+
+button {
+    background-color: #BADA55;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px #000 solid;
+    margin: 30px 0;
+}
+.profile.box-inline div:first-child {
+    padding-inline: 50px;
+}
+
+.profile.box-inline div:last-child {
+    padding-inline: 50px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.group .box-inline, .workout .box-inline{
+    column-gap: 30px;
+}
+
+.box-left {
+    justify-content: flex-start;
+}
+
+select {
+    width: 200px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px #000 solid;
+}
+
+.workout-list {
+    border-radius: 5px;
+    border: 1px #000 solid;
+}
+.workout-list h3, ul {
+    padding-inline: 30px;
+}
+
+.workout-list hr {
+    border: 0;
+    border-bottom: 1px #000 solid;
+    width: 100%;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none
+}
+li {
+    line-height: 1.5em;
+}

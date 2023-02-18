@@ -39,7 +39,7 @@ function Profile() {
 
     return (
         <div className={'border'}>
-            <section className={'profile box-inline'}>
+            <section className={'profile box-inline box-left'}>
                 <div className={'box-column'}>
                     <img src={logo} alt="logo" />
                     <a><button>edytuj</button></a>

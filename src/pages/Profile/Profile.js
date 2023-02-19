@@ -1,4 +1,4 @@
-import "./Profile.css";
+import style from "./Profile.module.css";
 import logo from "../../logo.svg";
 function Profile() {
   var name = "name";
@@ -31,15 +31,15 @@ function Profile() {
   }
 
   return (
-    <div className={"border"}>
-      <section className={"profile box-inline box-left"}>
-        <div className={"box-column"}>
+    <div className={style.border}>
+      <section className={`${style.profile} ${style.boxInline} ${style.boxLeft}`}>
+        <div className={style.boxColumn}>
           <img src={logo} alt="logo" />
           <a>
             <button>edytuj</button>
           </a>
         </div>
-        <div className={"box-column"}>
+        <div className={style.boxColumn}>
           <h2>
             {name} {surname}
           </h2>
@@ -51,8 +51,8 @@ function Profile() {
         <hr></hr>
         <hr></hr>
       </section>
-      <section className={"group"}>
-        <div className={"box-inline box-left"}>
+      <section className={style.group}>
+        <div className={`${style.boxInline} ${style.boxLeft}`}>
           <SelectList groups={groups}></SelectList>
           <a>
             <button>wybierz klub</button>
@@ -62,10 +62,10 @@ function Profile() {
           </a>
         </div>
       </section>
-      <section className={"workout"}>
-        <div className={"box-inline box-left"}>
-          <div className={"box-column workout-list"}>
-            <h3 className={"text-main-color"}>treningi moje</h3>
+      <section className={style.workout}>
+        <div className={`${style.boxInline} ${style.boxLeft}`}>
+          <div className={`${style.boxColumn} ${style.workoutList}`}>
+            <h3 className={style.textMainColor}>treningi moje</h3>
             <hr></hr>
             {<ShowList workouts={workouts}></ShowList>}
           </div>

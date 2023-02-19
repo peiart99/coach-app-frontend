@@ -1,10 +1,10 @@
-import "./LoginBox.css";
+import style from "./LoginBox.module.css";
 import { Link } from "react-router-dom";
 
 function LoginBox() {
   return (
-    <div className="LoginWrapper">
-      <div className="LoginBox">
+    <div className={style.LoginWrapper}>
+      <div className={style.LoginBox}>
         <label>email</label>
         <input type="email"></input>
         <label>hasło</label>

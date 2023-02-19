@@ -18,7 +18,7 @@ h3, h2, ul {
     margin: 0.4em 0;
 }
 
-.text-main-color {
+.textMainColor {
     color: #BADA55;
 }
 
@@ -28,14 +28,14 @@ h3, h2, ul {
     padding: 50px;
 }
 
-.box-inline {
+.boxInline {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.box-column {
+.boxColumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,21 +53,21 @@ button {
     border: 1px #000 solid;
     margin: 30px 0;
 }
-.profile.box-inline div:first-child {
+.profile.boxInline div:first-child {
     padding-inline: 50px;
 }
 
-.profile.box-inline div:last-child {
+.profile.boxInline div:last-child {
     padding-inline: 50px;
     text-align: left;
     align-items: flex-start;
 }
 
-.group .box-inline, .workout .box-inline{
+.group .boxInline, .workout .boxInline{
     column-gap: 30px;
 }
 
-.box-left {
+.boxLeft {
     justify-content: flex-start;
 }
 
@@ -78,15 +78,15 @@ select {
     border: 1px #000 solid;
 }
 
-.workout-list {
+.workoutList {
     border-radius: 5px;
     border: 1px #000 solid;
 }
-.workout-list h3, ul {
+.workoutList h3, ul {
     padding-inline: 30px;
 }
 
-.workout-list hr {
+.workoutList hr {
     border: 0;
     border-bottom: 1px #000 solid;
     width: 100%;
@@ -96,6 +96,7 @@ select {
 ul {
     list-style-type: none
 }
+
 li {
     line-height: 1.5em;
 }

@@ -1,0 +1,17 @@
+.header{
+    width: 100%;
+    min-height: 50px;
+    background-color: rgb(190, 190, 247);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+
+}

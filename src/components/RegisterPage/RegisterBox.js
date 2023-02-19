@@ -30,8 +30,11 @@ function RegisterBox() {
     setCoachID(event.target.value);
   }
 
+  console.log(isCoach);
+
   function handleRegisterButton() {
-    var parametersCoach = `login=${email}&password=${password}&firstName=${fname}&lastName=${lname}`;
+    console.log("tutaj " + coachID);
+    var parametersCoach = `login=${email}&password=${password}&firstName=${fname}&lastName=${lname}&coachID=-1`;
     var parametersAthlete = `login=${email}&password=${password}&firstName=${fname}&lastName=${lname}&coachID=${coachID}`;
     if (isCoach) {
       fetch(`http://localhost/backend/register.php?${parametersCoach}`)

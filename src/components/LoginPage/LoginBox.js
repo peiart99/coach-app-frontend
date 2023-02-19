@@ -9,7 +9,9 @@ function LoginBox() {
         <input type="email"></input>
         <label>hasło</label>
         <input type="password"></input>
-        <button>Zaloguj się</button>
+        <Link to="profile">
+          <button>Zaloguj się</button>
+        </Link>
         <Link to="register">
           <button>Rejestracja</button>
         </Link>

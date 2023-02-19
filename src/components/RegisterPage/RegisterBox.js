@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./RegisterBox.css";
+import style from "./RegisterBox.module.css";
 
 function RegisterBox() {
   const [coachListData, setCoachListData] = useState([]);
@@ -14,8 +14,8 @@ function RegisterBox() {
   console.log(coachListData);
 
   return (
-    <div className="RegisterWrapper">
-      <div className="RegisterBox">
+    <div className={style.RegisterWrapper}>
+      <div className={style.RegisterBox}>
         <label>imie</label>
         <input type="text"></input>
         <label>nazwisko</label>

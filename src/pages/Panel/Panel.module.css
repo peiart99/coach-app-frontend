@@ -18,11 +18,11 @@ h3, h2, ul {
     margin: 0.4em 0;
 }
 
-.text-main-color {
+.textMainColor {
     color: #BADA55;
 }
 
-.box-left {
+.boxLeft {
     display: flex;
     justify-content: flex-start !important;
 }
@@ -36,13 +36,13 @@ h3, h2, ul {
     flex-direction: column;
 }
 
-.box-inline {
+.boxInline {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.box-column {
+.boxColumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +57,7 @@ button {
     margin: 30px 0;
 }
 
-.box-inline{
+.boxInline{
     column-gap: 30px;
 }
 
@@ -65,15 +65,15 @@ section {
     justify-content: flex-start;
 }
 
-.workout-list {
+.workoutList {
     border-radius: 5px;
     border: 1px #000 solid;
 }
-.workout-list h3, ul {
+.workoutList h3, ul {
     padding-inline: 30px;
 }
 
-.workout-list hr {
+.workoutList hr {
     border: 0;
     border-bottom: 1px #000 solid;
     width: 100%;
@@ -86,11 +86,11 @@ ul {
 li {
     line-height: 1.5em;
 }
-.lists.box-inline > .box-inline{
+.lists.boxInline > .boxInline{
     align-items: flex-start;
 }
 
-.lists.box-inline button{
+.lists.boxInline button{
     margin: 0;
 }
 

@@ -1,4 +1,4 @@
-import "./LoginBox.css";
+import style from "./LoginBox.module.css";
 import { Link } from "react-router-dom";
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
@@ -33,8 +33,8 @@ function LoginBox() {
 
 
   return (
-    <div className="LoginWrapper">
-      <div className="LoginBox">
+    <div className={style.LoginWrapper}>
+      <div className={style.LoginBox}>
         <label>email</label>
         <input onChange={e=>{setEmail(e.target.value)}} type="email"></input>
         <label>hasło</label>
@@ -44,7 +44,7 @@ function LoginBox() {
         <Link to="register">
           <button>Rejestracja</button>
         </Link>
-          {error&&<div id="errorMessage"><p>{error}</p></div>}
+          {error && <div className={style.errorMessage}><p>{error}</p></div>}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import style from "./Profile.module.css";
 import logo from "../../logo.svg";
+import {useEffect, useState} from "react";
 function Profile() {
   var name = "name";
   var surname = "surname";
@@ -7,13 +8,13 @@ function Profile() {
   var group = "group";
   var coach = "coach";
 
-  const groups = ["group1", "group2", "group3"];
-  const workouts = ["workout1", "workout2", "workout3"];
+  const [clubs, setClubs] = useState([])
+  const [workouts, setWorkouts] = useState([])
 
   function SelectList(props) {
-    const list = props.groups;
+    const list = props.clubs;
 
-    const options = list.map((e) => <option key={e}>{e}</option>);
+    const options = list.map((e) => <option key={e.id}>{e.name}</option>);
 
     return <select>{options}</select>;
   }
@@ -29,6 +30,19 @@ function Profile() {
       </ul>
     );
   }
+  useEffect(()=>{
+        fetch(loginEndpoint)
+            .then((res)=>res.json())
+            .then((res)=>{
+              console.log(res)
+              setClubs(res)
+              //setWorkouts(res.data.value)
+            });
+
+      }
+  ,[])
+  const loginEndpoint = 'http://szulerinio.pl/backend/clubs.php'
+
 
   return (
     <div className={style.border}>
@@ -53,7 +67,7 @@ function Profile() {
       </section>
       <section className={style.group}>
         <div className={`${style.boxInline} ${style.boxLeft}`}>
-          <SelectList groups={groups}></SelectList>
+          <SelectList clubs={clubs}></SelectList>
           <a>
             <button>wybierz klub</button>
           </a>

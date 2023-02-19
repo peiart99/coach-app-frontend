@@ -6,8 +6,7 @@
 }
 
 .LoginBox {
-  height: 400px;
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,4 +14,10 @@
   row-gap: 15px;
   border-radius: 10px;
   background-color: rgb(190, 190, 247);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#errorMessage p {
+  color: red;
 }

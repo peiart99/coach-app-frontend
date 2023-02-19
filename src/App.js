@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Profile from "./pages/Profile";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import Profile from "./pages/Profile/Profile";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {

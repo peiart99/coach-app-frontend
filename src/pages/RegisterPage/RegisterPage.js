@@ -1,4 +1,4 @@
-import RegisterBox from "../components/RegisterPage/RegisterBox";
+import RegisterBox from "../../components/RegisterPage/RegisterBox";
 
 function RegisterPage() {
   return (

@@ -1,10 +1,14 @@
+import { useEffect, useState } from "react";
 import style from "./Panel.module.css";
+
 function Panel() {
   var name = "name";
   var surname = "surname";
 
   const athletes = ["athlete1", "athlete2", "athlete3"];
   const workouts = ["workout1", "workout2", "workout3"];
+
+  const [userData, setUserData] = useState([]);
 
   function ShowList2(props) {
     const list = props.athletes;

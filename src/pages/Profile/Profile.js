@@ -2,18 +2,24 @@ import style from "./Profile.module.css";
 import logo from "../../logo.svg";
 import { useEffect, useState } from "react";
 function Profile() {
-  //var name = "name";
-  //var surname = "surname";
-
-  var group = "group";
-  var coach = "coach";
-
   const [clubID, setClubID] = useState("NULL");
   const [clubs, setClubs] = useState([]);
   const [workouts, setWorkouts] = useState([]);
   const [userData, setUserData] = useState([]);
-  const [name, setName] = useState("name");
-  const [surname, setSurname] = useState("surname");
+  const [coachData, setCoachData] = useState([]);
+
+  function updateCoachData() {
+    const coachDataEndpoint = "http://localhost/backend/getCoachData.php";
+
+    fetch(coachDataEndpoint + `?coachID=${userData.coachId}`, {
+      credentials: "include",
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setCoachData(response.data[0]);
+      });
+  }
 
   function updateUserData() {
     fetch("http://localhost/backend/getUserData.php", {
@@ -36,7 +42,19 @@ function Profile() {
       .then((response) => {
         console.log(response);
         updateUserData();
-        setClubID(clubs.at(0).id);
+      });
+  }
+
+  function handleResign() {
+    const clubChangeEndpoint = "http://localhost/backend/changeClub.php";
+
+    fetch(clubChangeEndpoint + `?clubId=1`, {
+      credentials: "include",
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        updateUserData();
       });
   }
   function handleClubIDSelect(event) {
@@ -44,7 +62,7 @@ function Profile() {
     console.log("Zmiana na " + event.target.value);
   }
   function SelectList(props) {
-    const list = props.clubs;
+    const list = props.clubs.slice(1, props.clubs.length);
 
     const options = list.map((e) => (
       <option key={e.id} value={e.id}>
@@ -52,7 +70,11 @@ function Profile() {
       </option>
     ));
 
-    return <select onChange={handleClubIDSelect}>{options}</select>;
+    return (
+      <select value={props.currentClub} onChange={handleClubIDSelect}>
+        {options}
+      </select>
+    );
   }
 
   function ShowList(props) {
@@ -85,6 +107,7 @@ function Profile() {
       .then((response) => {
         console.log(response);
         setUserData(response.data[0]);
+        updateCoachData();
       });
   }, []);
 
@@ -103,8 +126,8 @@ function Profile() {
           <h2>
             {userData.firstName} {userData.lastName}
           </h2>
+          <h3>Trener: {coachData.firstName + " " + coachData.lastName}</h3>
           <h3>Klub: {userData.clubId}</h3>
-          <h3>Trener: {userData.coachId}</h3>
         </div>
       </section>
       <section>
@@ -113,12 +136,12 @@ function Profile() {
       </section>
       <section className={style.group}>
         <div className={`${style.boxInline} ${style.boxLeft}`}>
-          <SelectList clubs={clubs}></SelectList>
+          <SelectList clubs={clubs} currentClub={clubID}></SelectList>
           <a>
             <button onClick={handleClubChoice}>wybierz klub</button>
           </a>
           <a>
-            <button>wypisz się</button>
+            <button onClick={handleResign}>wypisz się</button>
           </a>
         </div>
       </section>
